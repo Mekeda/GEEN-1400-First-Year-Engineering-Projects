@@ -1,0 +1,36 @@
+// Solenoid Pseudocode C++ - Eventual Arduino Conversion
+// No methods. Only functions and variables.
+
+// pin(x) determines which pin is being activated by low -> high power. When the button is pushed 
+// the power will change from low to high and activate the solenoid. When the button determines which pin to power 
+// the pins connected to the solenoid will switch between HIGH and LOW with a delay in between of 500 ms. 
+// This will put the power towards one positive end of the solenoid to activate the pin on the solenoid, then
+// after 500 ms it will switch pin power to push the other pin back. This is for the ball drop mechanism
+// and will have individual functionality for each button and have a smooth delay time to drop no more than 
+// one ball.
+
+if(pin(1))
+{
+	pin(5, LOW)
+	pin(6, HIGH)
+	delay(500)
+	pin(5, HIGH)
+	pin(6, LOW)
+
+}
+else if(pin(2))
+{
+	pin(7, LOW)
+	pin(8, HIGH)
+	delay(500)
+	pin(7, HIGH)
+	pin(8, LOW)
+}
+else if(pin(3))
+{
+	pin(9, LOW)
+	pin(10, HIGH)
+	delay(500)
+	pin(9, HIGH)
+	pin(10, LOW)
+}

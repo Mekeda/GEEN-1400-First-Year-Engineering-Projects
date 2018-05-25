@@ -1,0 +1,136 @@
+// IR Sensor Pseudocode C++ - Eventual Arduino Conversion
+// No methods. Only functions and variables.
+
+// Player Array Constructors. These will allow the program to initialize the elements needed to keep
+// track of scores.
+counter = 0;
+capacity = 1;
+// get_Frequency() will bring in the eventual frequency each hole produces.
+int HOLE_FREQUENCY = get_Frequency();
+frequency = HOLE_FREQUENCY;
+// Creates 2 arrays with capacity 1 and initializes them to 0.
+player1counter = new int[capacity];
+player2counter = new int[capacity];
+player1counter[0] = 0;
+player2counter[0] = 0;
+// True/False to determine player turn and game type, i.e. one player or two player.
+bool playerswitch;
+bool playerpower;
+
+// This will reset the players score to 0 if one has reached 20 points.
+// This will print out which player wins on the screens.
+if (player1counter[0] = 20)
+{
+	player1counter[0] = 0;
+	player2counter[0] = 0;
+	cout << "Player 1 Wins!" << endl;
+}
+
+else if(player2counter[0] = 20)
+{
+	player1counter[0] = 0;
+	player2counter[0] = 0;
+	cout << "Player 2 Wins!" << endl;
+}
+
+// This will keep track of the switch and add the current counter to the correct player. The playerswitch boolean will
+// actually come from the sensor at the bottom ball retrieval. Each time a ball goes through and the analog changes the 
+// playerswitch boolean will change from false to true. If playerpower is true then the game will be a two player game
+// and if the playerpower is false it will only be a one player game.
+
+While(playerpower == true)
+{
+	if(playerswitch == true)
+	{
+		for(int i = 0, i < counter, i++)
+		{
+			player1counter[0] = player1counter[0] + 1; // This is to count upwards by one each time someone scores to learn action-reaction.
+			cout << "" + player1counter[0] + "" << endl; 
+		}
+		counter = 0;
+	}
+	else if(playerswitch == false)
+	{
+		for(int i = 0, i < counter, i++)
+		{
+			player2counter[0] = player2counter[0] + 1;
+			cout << "" + player2counter[0] + "" << endl;
+		}
+		counter = 0;
+	}
+}
+
+While(playerpower == false)
+{
+	if(playerswitch == true)
+	{
+		for(int i = 0, i < counter, i++)
+		{
+			player1counter[0] = player1counter[0] + 1;
+			cout << "" + player1counter[0] + "" << endl; 
+		}
+		counter = 0;
+	}
+	else if(playerswitch == false)
+	{
+		for(int i = 0, i < counter, i++)
+		{
+			player1counter[0] = player1counter[0] + 1;
+			cout << "" +  player1counter[0] + "" << endl; 
+		}
+		counter = 0;
+	}
+
+}
+
+// This will increase the counter and add it to the player score depending on the output
+// frequency. Each hole will output a different frequency to distinguish point values.
+
+if (frequency == 1)
+{
+	counter = counter + 1;
+	return counter;
+}
+else if(frequency == 2)
+{
+	counter = counter + 2;
+	return counter;
+}
+else if(frequency == 3)
+{
+	counter = counter + 3;
+	return counter;
+}
+else if(freqeuncy == 4)
+{
+	counter = counter + 1;
+	return counter;
+}
+else if(frequency == 5)
+{
+	counter = counter + 2;
+	return counter;
+}
+else if(frequency == 6)
+{
+	counter = counter + 3;
+	return counter;
+}
+else if(frequency == 7)
+{
+	counter = counter + 1;
+	return counter;
+}
+
+if(A1,A2....)
+{
+	if(play == true)
+	{
+		play = false;
+	}
+	else if(play == false)
+	{
+		play = true;
+	}
+	return play;
+}
